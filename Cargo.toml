@@ -1,0 +1,23 @@
+[package]
+name = "twatch"
+version = "0.1.0"
+authors = ["bjoernQ <bjoern.quentin@mobile-j.de>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+esp32-hal = { package = "esp32-hal", git = "https://github.com/esp-rs/esp-hal.git" }
+esp-backtrace = { git = "https://github.com/esp-rs/esp-backtrace.git", features = ["esp32", "panic-handler", "exception-handler"] }
+xtensa-lx-rt = { version = "0.11.0", features = ["esp32"], optional = true }
+embedded-hal = "0.2.7"
+fugit = "0.3.5"
+st7789 = "0.6.1"
+display-interface = "0.4"
+display-interface-spi = "0.4"
+embedded-graphics = "0.7"
+esp-println = { git = "https://github.com/esp-rs/esp-println.git", features = ["esp32"] }
+axp20x = "0.0.1"
+
+[features]
+default = ["rt"]
+rt = ["xtensa-lx-rt"]
